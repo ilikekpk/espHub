@@ -14,11 +14,11 @@ import java.util.*
 import kotlin.concurrent.thread
 
 
-const val BROADCAST_CMD = "plakatinNSD";
+const val BROADCAST_CMD = "plakatinNSD"
 
 class MainActivity : AppCompatActivity() {
 
-    var spinnerData = mutableListOf<String>();
+    var spinnerData = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun recieveUdp() {
         thread(start = true) {
-            val buffer = kotlin.ByteArray(255);
+            val buffer = ByteArray(255)
             val socket = DatagramSocket(1024)//? = null;
             while(true){
                 socket.broadcast = true
