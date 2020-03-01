@@ -83,9 +83,9 @@ class MainActivity : AppCompatActivity() {
     private fun recieveUdp() {
         thread(start = true) {
             val buffer = ByteArray(255)
-            val socket = DatagramSocket(1024)//? = null;
+            val socket = DatagramSocket(1024)//? = null
             while(true){
-                socket.broadcast = true
+                socket.broadcast = false
                 val packet = DatagramPacket(buffer, buffer.size)
                 socket.receive(packet)
                 val serviceName = String( packet.data, 0, packet.length, Charsets.UTF_8)
